@@ -43,5 +43,5 @@ ansible
 Для запуска файла нужно прописать команду "ansible-playbook nginx.yml" Результат должен быть: "nginx : ok=4 changed=0 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0"
 # Результат
 Открываем сайт по адресу http://192.168.11.150:8080 Если сайт открывается, то код работает корректно 
-![]()
+![](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/photo_2023-04-04_13-08-28.jpg)
 
