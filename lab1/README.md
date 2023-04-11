@@ -11,7 +11,7 @@ ansible
 - добавить в плейбук копирование новой конфигурации сервиса на стенд
 - должен быть использован механизм notify для рестарта nginx после установки или
 изменения конфигурации 
-[lab1](https://github.com/FoodLoverForYouAndYourFood/os_lab2/tree/main/os_lab2/lab1/Ansible)
+[lab1](https://github.com/FoodLoverForYouAndYourFood/os_lab2/tree/master/lab1)
 ##  Установка Ansible #
 >Проверьте версию Python. Для работы с Ansible нам нужна версия выше 2.6
 
@@ -24,13 +24,13 @@ ansible
 Вводим команду: vagrant up
 
 А после: vagrant ssh-config
-##  [Inventory](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/main/os_lab2/lab1/Ansible/inventory)
+##  [Inventory](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/inventory)
 Для подключения к хосту nginx нам необходимо будет передать множество параметров - это особенность Vagrant. Узнать эти параметры можно с помощью команды vagrant ssh-config. После прописывания этой команды вводим необходимые данные в inventory файл. Указываем имя хоста, ip-адрес, путь до приватного ключа ansible
-## [Playbook epel](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/main/os_lab2/lab1/Ansible/epel.yml)
+## [Playbook epel](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/epel.yml)
 >Написан epel playbook, который выполняет задачу установки пакетов репозиториев epel
-## [Playbook nginx](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/main/os_lab2/lab1/Ansible/nginx.yml)
+## [Playbook nginx](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/nginx.yml)
 >Скачивает epel репозитории и создает конфигурационный файл по шаблону. В качестве заголовка указывается перезапуск.
-## [Шаблон для конфига nginx](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/main/os_lab2/lab1/Ansible/nginx.conf.j2)
+## [Шаблон для конфига nginx](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/nginx.conf.j2)
 Был создан шаблон для конфигурационного файла. В нем указаны такие параметры сервера как root, location, прослушиваемый порт.
 # Запуск скриптов
 ## Этап 1. Нужно удостовериться, что виртуальная мащина работает
@@ -43,5 +43,5 @@ ansible
 Для запуска файла нужно прописать команду "ansible-playbook nginx.yml" Результат должен быть: "nginx : ok=4 changed=0 unreachable=0 failed=0 skipped=0 rescued=0 ignored=0"
 # Результат
 Открываем сайт по адресу http://192.168.11.150:8080 Если сайт открывается, то код работает корректно 
-![](/os_lab2/lab1/Ansible/photo_2023-04-04_13-08-28.jpg)
+![](https://github.com/FoodLoverForYouAndYourFood/os_lab2/blob/master/lab1/photo_2023-04-04_13-08-28.jpg)
 
