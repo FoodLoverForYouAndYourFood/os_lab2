@@ -10,6 +10,10 @@ MACHINES = {
         :box_name => "redos732",
         :ip_addr => '192.168.11.112'
   },
+  :web3 => {
+    :box_name => "redos732",
+    :ip_addr => '192.168.11.114'
+  },
   :rrobin => {
         :box_name => "redos732",
         :ip_addr => '192.168.11.113'
