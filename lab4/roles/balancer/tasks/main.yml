@@ -1,0 +1,20 @@
+---
+# tasks file for balancer
+- name: Install the latest version of haproxy
+  ansible.builtin.dnf:
+    name: HAproxy
+    state: latest
+  tags:
+   -  balancer
+
+- name: Template a file to /etc/haproxy/haproxy.conf.j2
+  ansible.builtin.template:
+    src: haproxy.conf.j2
+    dest: /etc/haproxy/haproxy.conf.j2
+    owner: root
+    group: root
+  notify:
+    - Start and enabled haproxy
+  tags:
+   -  balancer
+- name: Install the latest version keep-alive
